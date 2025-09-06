@@ -1,16 +1,15 @@
 version: "3.8"
 
 services:
-
   online_shop:
     build:
       context: .
     container_name: online_shop
     ports:
-      - "5173:5173"
+      - "5173:80"   # map host 5173 → container 80 (nginx listens here)
     restart: always
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:5173/"]
+      test: ["CMD", "curl", "-f", "http://localhost:80/"]
       interval: 60s
       timeout: 10s
       retries: 5
