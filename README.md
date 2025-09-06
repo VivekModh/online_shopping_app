@@ -31,9 +31,10 @@ A full-stack **E-commerce Web Application** built to demonstrate containerizatio
 
 ---
 
-## Getting Started
+## 🚀 Getting Started
 
 ### 1. Clone the Project
+```bash
 git clone https://github.com/VivekModh/online_shopping_app.git
 cd online_shopping_app
 2. Build Docker Image
@@ -47,7 +48,41 @@ docker logs <container_id>   # Check logs
 docker run -d -v /home/ubuntu/volume/online_shop:/logs -p 5173:5173 online-shop-app:latest
 5. Docker Networks
 Docker supports 7 types of networks; most commonly used:
+
 none
+
+host
+
+bridge
+
+user-defined bridge
+
+Create a custom network:
+docker network create my-net
+Run container on custom network:
+docker run -d --network my-net --name nginx -p 80:80 nginx:latest
+6. Multi-Container Management (Docker Compose)
+docker-compose up -d
+docker-compose down
+⚙️ Jenkins CI/CD Pipeline
+Setup:
+Create DockerHub Personal Access Token
+
+Add credentials in Jenkins → dockerHubCred
+
+Configure pipeline using the provided Jenkinsfile
+
+Use Ngrok (if running Jenkins on WSL) to expose GitHub Webhook:
+ngrok http 8080
+Add Webhook in GitHub Repo Settings:
+
+Payload URL: https://<ngrok-url>/github-webhook/
+
+Content type: application/json
+
+Enable SSL verification
+
+Select Send me everything
 host
 bridge
 user-defined bridge
