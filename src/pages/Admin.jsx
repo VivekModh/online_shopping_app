@@ -34,10 +34,10 @@ export default function Admin() {
 
     return (
         <Container>
-            <h1 className="text-primary mb-4">Admin Dashboard</h1>
+            <h1 className="text-primary mb-4">Admin Dashboarddddd</h1>
             
             <div className="admin-form-container p-4 mb-5">
-                <h2 className="mb-4">Add New Product</h2>
+                <h2 className="mb-4">Add New Producttttt</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-3">
                         <label className="form-label">Product Name</label>
